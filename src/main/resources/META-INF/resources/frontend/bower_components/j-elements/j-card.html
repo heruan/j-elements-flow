@@ -17,6 +17,8 @@
         box-sizing: border-box;
         /* TODO should become --lumo-box-shadow-xs */
         box-shadow: 0 1px 4px -1px var(--lumo-shade-60pct);
+        display: flex;
+        flex-direction: column;
       }
 
       [hidden] {
@@ -32,7 +34,9 @@
       }
 
       [part="content"] {
-        flex: auto;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
         padding: var(--lumo-space-wide-l);
       }
 

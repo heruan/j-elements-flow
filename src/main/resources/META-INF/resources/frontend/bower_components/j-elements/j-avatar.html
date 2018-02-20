@@ -116,6 +116,15 @@
         font-size: var(--lumo-font-size-l);
       }
 
+      :host([theme~="xx-large"]) {
+        width: calc(var(--lumo-size-xl) * 2);
+        height: calc(var(--lumo-size-xl) * 2);
+      }
+
+      :host([theme~="xx-large"]) [part="abbr"] {
+        font-size: calc(var(--lumo-font-size-l) * 2);
+      }
+
       /* Circle */
       :host([theme~="rect"]) {
         border-radius: var(--lumo-border-radius);
@@ -177,7 +186,6 @@
     })();
   </script>
 </dom-module>
-
 
 <dom-module id="j-avatar-group">
   <template>
