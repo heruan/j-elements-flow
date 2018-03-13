@@ -1,19 +1,34 @@
+/*-
+ * Copyright 2017-2018 Axians SAIV S.p.A.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+-*/
 package to.lova.flow.components.jelements;
 
 import java.util.stream.Stream;
 
 import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.HasComponents;
 import com.vaadin.flow.component.HasSize;
 import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.HtmlImport;
+import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.server.AbstractStreamResource;
 
 @Tag("j-card")
 @HtmlImport("bower_components/j-elements/j-card.html")
 public class Card extends Component
-        implements HasComponents, HasSize, HasStyle {
+        implements FlexComponent<Card>, HasSize, HasStyle {
 
     public Card(Component... components) {
         this.add(components);
