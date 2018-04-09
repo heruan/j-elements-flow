@@ -65,7 +65,7 @@
         <junit.version>4.12</junit.version>
         <nexus.staging.version>1.6.8</nexus.staging.version>
         <jetty.version>9.3.7.v20160115</jetty.version>
-        <vaadin.version>10.0.0.beta2</vaadin.version>
+        <vaadin.version>10.0.0.beta6</vaadin.version>
     </properties>
 
     <repositories>
