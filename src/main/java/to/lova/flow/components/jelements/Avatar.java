@@ -1,5 +1,7 @@
 package to.lova.flow.components.jelements;
 
+import com.vaadin.flow.component.HasSize;
+import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.HtmlImport;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
@@ -8,7 +10,8 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 
 @Tag("j-avatar")
 @HtmlImport("bower_components/j-elements/j-avatar.html")
-public class Avatar extends PolymerTemplate<Avatar.Model> {
+public class Avatar extends PolymerTemplate<Avatar.Model>
+        implements HasSize, HasStyle {
 
     public interface Model extends TemplateModel {
 
