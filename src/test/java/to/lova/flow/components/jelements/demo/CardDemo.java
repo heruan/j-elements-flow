@@ -37,31 +37,31 @@ public class CardDemo extends VerticalLayout {
         Card card1 = new Card();
         card1.setWidth("300px");
         card1.setImage("https://placeimg.com/480/320/nature");
-        card1.addToHeader(new Span("Header"));
-        card1.addToTitle(new H6("Supertitle"), new H3("Card title"),
+        card1.getHeader().add(new Span("Header"));
+        card1.getTitle().add(new H6("Supertitle"), new H3("Card title"),
                 new H5("Subtitle for this card"));
-        card1.addToTitleSuffix(
+        card1.getTitleSuffix().add(
                 new Avatar("User Name", "https://placeimg.com/80/80/people"));
         card1.add(this.getParagraph(), this.getButtons());
-        card1.addToFooter(new Span("Footer"));
+        card1.getFooter().add(new Span("Footer"));
 
         Card card2 = new Card();
         card2.setWidth("300px");
         card2.getElement().getThemeList().add("image-overlay");
         card2.setImage("https://placeimg.com/481/322/nature");
         card2.setImageAspect(0.7);
-        card2.addToTitle(new H6("Supertitle"), new H3("Card title"),
+        card2.getTitle().add(new H6("Supertitle"), new H3("Card title"),
                 new H5("Subtitle for this card"));
-        card2.addToTitleSuffix(
+        card2.getTitleSuffix().add(
                 new Avatar("User Name", "https://placeimg.com/79/79/people"));
         card2.add(this.getParagraph(), this.getButtons());
 
         Card card3 = new Card();
         card3.setWidth("300px");
-        card3.addToHeader(new Span("Header"));
-        card3.addToTitle(new H6("Supertitle"),
+        card3.getHeader().add(new Span("Header"));
+        card3.getTitle().add(new H6("Supertitle"),
                 new H3("Long card title that wraps"));
-        card3.addToTitleSuffix(new AvatarGroup(new Avatar("Manny Calavera",
+        card3.getTitleSuffix().add(new AvatarGroup(new Avatar("Manny Calavera",
                 "https://img00.deviantart.net/1e0a/i/2009/324/3/d/grim_fandango___manny_calavera_by_thelastangrypoet.jpg"),
                 new Avatar("Guybrush Threepwood",
                         "http://www.cubed3.com/media/2011/August/jesusraz/guybrush4.jpg"),
@@ -72,7 +72,7 @@ public class CardDemo extends VerticalLayout {
         badge1.getElement().getThemeList().addAll(
                 Stream.of("badge", "error").collect(Collectors.toList()));
         badge1.add(new Icon("lumo", "bell"), new Text("Alarm"));
-        card3.addToFooter(badge1);
+        card3.getFooter().add(badge1);
 
         row1.add(card1, card2, card3);
 
@@ -89,20 +89,20 @@ public class CardDemo extends VerticalLayout {
                 .addAll(Stream.of("badge", "primary", "success")
                         .collect(Collectors.toList()));
         badge2.add(new Icon("lumo", "clock"), new Text("Closing soon"));
-        card4.addToHeader(badge2);
-        card4.addToTitle(new H3("Card title"),
+        card4.getHeader().add(badge2);
+        card4.getTitle().add(new H3("Card title"),
                 new H5("Subtitle for this card"));
         card4.add(this.getParagraph());
-        card4.addToFooter(this.getButtons());
+        card4.getFooter().add(this.getButtons());
 
         Card card5 = new Card();
         card5.setWidth("300px");
-        card5.addToHeader(new Span("Card title"));
+        card5.getHeader().add(new Span("Card title"));
         card5.add(this.getParagraph(), this.getButtons());
 
         Card card6 = new Card();
         card6.setWidth("300px");
-        card6.addToTitle(new H3("Card title"),
+        card6.getTitle().add(new H3("Card title"),
                 new H5("Subtitle for this card"));
         card6.add(this.getParagraph(), this.getButtons());
 

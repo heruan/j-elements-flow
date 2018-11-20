@@ -15,9 +15,8 @@
 -*/
 package to.lova.flow.components.jelements;
 
-import java.util.stream.Stream;
-
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.HasComponents;
 import com.vaadin.flow.component.HasSize;
 import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.Tag;
@@ -28,7 +27,7 @@ import com.vaadin.flow.server.AbstractStreamResource;
 @Tag("j-card")
 @HtmlImport("bower_components/j-elements/j-card.html")
 public class Card extends Component
-        implements FlexComponent<Card>, HasSize, HasStyle {
+        implements FlexComponent<Card>, HasSize, HasStyle, HasSlots {
 
     public Card(Component... components) {
         this.add(components);
@@ -55,26 +54,20 @@ public class Card extends Component
         this.getElement().setAttribute("image-aspect", String.valueOf(aspect));
     }
 
-    public void addToHeader(Component... components) {
-        this.addToSlot("header", components);
+    public HasComponents getHeader() {
+        return this.getSlot("header");
     }
 
-    public void addToFooter(Component... components) {
-        this.addToSlot("footer", components);
+    public HasComponents getFooter() {
+        return this.getSlot("footer");
     }
 
-    public void addToTitle(Component... components) {
-        this.addToSlot("title", components);
+    public HasComponents getTitle() {
+        return this.getSlot("title");
     }
 
-    public void addToTitleSuffix(Component... components) {
-        this.addToSlot("title-suffix", components);
-    }
-
-    private void addToSlot(String slot, Component... components) {
-        Stream.of(components).map(Component::getElement)
-                .forEach(e -> e.setAttribute("slot", slot));
-        this.add(components);
+    public HasComponents getTitleSuffix() {
+        return this.getSlot("title-suffix");
     }
 
 }
